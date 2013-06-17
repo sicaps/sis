@@ -1,0 +1,2 @@
+module StgProduitsHelper
+end

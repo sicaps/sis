@@ -1,0 +1,50 @@
+<% @page_title= 'Modifier Produit' %>
+
+<%= link_to("<< Back to List", {:controller => 'dim_produits', :action => 'list'}, :class => 'back-link') %>
+
+<div class="subject edit">
+  <h3>Modifier un enregistrement de la table dim_producteurs à partir de stg_producteurs</h3>
+
+  <%= form_for(:stg_producteur, :url => {:action => 'update', :id => @stg_producteur.id}) do |f| %>
+  
+    <table summary="Dim_produit form fields">
+      <tr>
+        <th>Code</th>
+        <td><%= f.text_field(:prod_id) %></td>
+      </tr>
+      <tr>
+        <th>Name</th>
+        <td><%= f.text_field(:prod_name) %></td>
+      </tr>
+      <tr>
+        <th>Uap</th>
+        <td><%= f.text_field(:prod_name) %></td>
+      </tr>
+      <tr>
+        <th>Site</th>
+        <td><%= f.text_field(:prod_site) %></td>
+      </tr>
+      <tr>
+        <th>District</th>
+        <td><%= f.text_field(:prod_district) %></td>
+      </tr>
+      <tr>
+        <th>Region</th>
+        <td><%= f.text_field(:prod_region) %></td>
+      </tr>
+      <tr>
+        <th>Département</th>
+        <td><%= f.text_field(:prod_dept) %></td>
+      </tr>
+      <tr>
+        <th>Ville</th>
+        <td><%= f.text_field(:prod_ville) %></td>
+      </tr>
+    </table>
+    
+    <div class="form-buttons">
+      <%= submit_tag("Modifier Dim_producteurs") %>
+    </div>
+    
+  <% end %>
+</div>

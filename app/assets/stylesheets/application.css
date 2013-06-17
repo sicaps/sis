@@ -1,0 +1,277 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+/*body {
+    background-color: #4B7399;
+    font-family: Verdana, Helvetica, Arial;
+    font-size: 10px;
+}
+
+/* issue de public.css*/
+
+html { height: 100%; width: 100%; }
+
+body { width: 100%; min-width: 980px; height: 100%; margin: 0; padding: 0;
+    font: 14px Verdana,Lucida,Arial,Helvetica,sans-serif; color: #332318; }
+
+p, td, ul, ol, li, dl, dt, dd {
+    font-family: Verdana,Lucida,Arial,Helvetica,sans-serif; }
+
+img { border: none; }
+
+table { border-collapse: collapse; }
+
+table tr th, table tr td { vertical-align: top; text-align: left;
+    padding: 3px; }
+
+a, a:visited { color: #993120; }
+a:hover {}
+
+.clear { clear: both; }
+.center { text-align: center; }
+
+/* Structure */
+#header { height: 5em; padding-top: 1em; text-align: center;
+    background: #0186ba; color: #FFFFFF; }
+
+#header h1 { margin: 0; padding: 0; }
+
+#main { min-height: 500px; background: #FFFFFF; }
+
+#navigation { float: left; width: 180px; min-height: 490px; padding: 10px;
+    background: #94B26F; color: #4C2516; }
+
+#contentMenu { width:84%; height: 20px; padding: 2px; float: left}
+#content { width: 70%; min-height:20px; padding: 10px; float: left; }
+#footer { clear: both; height: 1.5em; text-align: right;
+    background: #4C2516; color: #F2DC87; }
+
+#footer p { margin: 0; padding: 0.5em 1em; }
+
+/* Navigation */
+#navigation ul { list-style: none; margin: 0; padding: 0; }
+#navigation ul li { margin-bottom: 0.5em; }
+#navigation ul ul { margin: 0.5em 0 0 1em; font-size: 0.9em; }
+#navigation a { text-decoration: none; padding: 1px 3px;}
+#navigation a:hover { background: #F2DC87; }
+
+/* Content */
+#content h2 { color: #4C2516; }
+
+
+
+
+#menu, #menu ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+}
+
+#menu {
+    width: 960px;
+    margin: 60px auto;
+    border: 1px solid #222;
+    background-color: #111;
+    background-image: -moz-linear-gradient(#444, #111);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#444), to(#111));
+    background-image: -webkit-linear-gradient(#444, #111);
+    background-image: -o-linear-gradient(#444, #111);
+    background-image: -ms-linear-gradient(#444, #111);
+    background-image: linear-gradient(#444, #111);
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    -moz-box-shadow: 0 1px 1px #777;
+    -webkit-box-shadow: 0 1px 1px #777;
+    box-shadow: 0 1px 1px #777;
+}
+#menu:before,
+#menu:after {
+    content: "";
+    display: table;
+}
+
+#menu:after {
+    clear: both;
+}
+
+#menu {
+    zoom:1;
+}
+
+
+
+#menu li {
+    float: left;
+    border-right: 1px solid #222;
+    -moz-box-shadow: 1px 0 0 #444;
+    -webkit-box-shadow: 1px 0 0 #444;
+    box-shadow: 1px 0 0 #444;
+    position: relative;
+}
+
+#menu a {
+    float: left;
+    padding: 12px 30px;
+    color: #999;
+    text-transform: uppercase;
+    font: bold 12px Arial, Helvetica;
+    text-decoration: none;
+    text-shadow: 0 1px 0 #000;
+}
+
+#menu li:hover > a {
+    color: #fafafa;
+}
+
+#menu ul li:first-child a:after{
+    content: '';
+    position: absolute;
+    left: 30px;
+    top: -8px;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 8px solid #444;
+}
+
+#menu ul li:first-child a:hover:after{
+    border-bottom-color: #04acec;
+}
+
+
+#menuDeroulant
+{
+    width: 100%;
+    list-style-type:none;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    position:relative;
+}
+#menuDeroulant li
+{
+    float: left;
+    width: 160px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+
+#menuDeroulant .sousMenu
+{
+    list-style-type: none;
+    margin: 0;
+    text-align: left;
+    padding: 0;
+    border: 0;
+}
+#menuDeroulant .sousMenu li
+{
+    float: none;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+
+#menuDeroulant li a:link, #menuDeroulant li a:visited
+{
+    display: block;
+    height: 1%;
+    color: #FFF;
+    background: #3B4E77;
+    margin: 0;
+    padding: 4px 8px;
+    border-right: 1px solid #fff;
+    text-decoration: none;
+}
+#menuDeroulant li a:hover { background-color: #F2462E; }
+#menuDeroulant li a:active { background-color: #5F879D; }
+
+#menuDeroulant .sousMenu li a:link,
+#menuDeroulant .sousMenu li a:visited
+{
+    display: block;
+    color: #FFF;
+    margin: 0;
+    border: 0;
+    text-decoration: none;
+    background-color: #AA0000; /*transparent url("caps.png") repeat;*/
+}
+#menuDeroulant .sousMenu li a:hover
+{
+    background-image: none;
+    background-color: #F2462E;
+}
+
+
+#menuDeroulant .sousMenu li
+{
+    float: none;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    width: 149px;
+    border-top: 1px solid transparent;
+    border-right: 1px solid transparent;
+}
+
+
+#menuDeroulant .sousMenu
+{
+    display: none;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+#menuDeroulant li:hover > .sousMenu { display: block; }
+
+#menuDeroulant
+{
+
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    border: 0;
+
+    top: 0;
+    left: 0;
+}
+
+/* IE6 only *html*/
+/*
+#menu li a:hover {
+    color: #fafafa;
+}
+
+
+
+
+/* Public stylesheet */
+
+/* Colors
+red:          #993120
+green:        #94B26F
+light green:  #B6D491
+yellow:       #F2DC87
+dark brown:   #332318
+light brown:  #4C2516
+*/
+
+

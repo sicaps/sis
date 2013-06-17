@@ -1,0 +1,2 @@
+module DimProduitsHelper
+end

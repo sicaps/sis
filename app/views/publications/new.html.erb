@@ -1,0 +1,36 @@
+<% @page_title= 'New Publication' %>
+
+<%= link_to('<< Back to List', {:action => 'list'}, :class => 'back-link') %>
+
+<div class="Publication new">
+  <h2>Create Publication</h2>
+
+  <%= semantic_form_for(:publication, :html => { :multipart => true }, :url => {:action => 'create'}) do |f| %>
+    <table summary="Publication form fields">
+      <tr>
+        <th>Type</th>
+        <td><%= f.input :typublication_id, :as => :select, :collection => Typublication.all %></td>
+      </tr>
+      <tr>
+        <th>N°</th>
+        <td><%= f.text_field(:numpublication) %></td>
+      </tr>
+      <tr>
+        <th>Titre</th>
+        <td><%= f.text_field(:titrepublication) %></td>
+      </tr>
+      <tr>
+        <th>Description</th>
+        <td><%= f.text_field(:description) %></td>
+      </tr>
+      <tr>
+        <th>Joindre le fichier</th>
+        <td><%= f.file_field(:fichier) %></td>
+      </tr>
+    </table>
+    <div class='form-buttons'>
+      <%= submit_tag('Create Publication') %>
+    </div>
+
+  <% end %>
+</div>

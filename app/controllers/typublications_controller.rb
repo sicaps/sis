@@ -1,0 +1,2 @@
+class TypublicationsController < ApplicationController
+end

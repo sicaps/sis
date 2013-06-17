@@ -1,0 +1,30 @@
+<% @page_title= 'Liste Produits' %>
+
+<div class="Produits list">
+  <h3>Afficher tous les enregistrements de la table dim_produits</h3>
+
+  <%= link_to('Nouveau Produit', {:controller => 'stg_produits', :action => 'new'}, :class => 'action new') %>
+
+
+  <table summary="Liste Produit">
+    <tr class="header">
+      <th>&nbsp;</th>
+      <th>Code</th>
+      <th>Name</th>
+      <th>Catégorie</th>
+      <th>Actions</th>
+    </tr>
+    <% @dim_produits.each do |dim_produit| %>
+        <tr>
+          <td><%= dim_produit.product_code %></td>
+          <td><%= dim_produit.product_name %></td>
+          <td><%= dim_produit.product_category %></td>
+          <td class="actions">
+            <%= link_to('Voir', {:action => 'show', :id => dim_produit.product_sk}, :class => 'action show') %>
+            <%= link_to("Modifier", {:controller => 'stg_produits', :action => 'edit', :id => dim_produit.product_sk}, :class => 'action edit') %>
+            <!--%= link_to('supprimer', {:action => 'delete', :id => dim_produit.product_sk}, :class => 'action delete') %-->
+          </td>
+        </tr>
+    <% end %>
+  </table>
+</div>

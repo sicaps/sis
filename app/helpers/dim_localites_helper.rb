@@ -1,0 +1,2 @@
+module DimLocalitesHelper
+end

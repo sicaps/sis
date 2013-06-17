@@ -1,0 +1,37 @@
+<% @page_title= 'Liste des Producteurs' %>
+
+<div class="producteur list">
+  <h2>Producteurs</h2>
+
+  <%= link_to('Nouveau Producteur', {:controller => 'stg_producteurs', :action => 'new'}, :class => 'action new') %>
+
+  <table class="listing" summary="Producteur list">
+    <tr class="header">
+      <th>&nbsp;</th>
+      <th>Name</th>
+      <th>UAP</th>
+      <th>Site</th>
+      <th>District</th>
+      <th>Region</th>
+      <th>Département</th>
+      <th>Ville</th>
+    </tr>
+    <% @dim_producteurs.each do |dim_producteur| %>
+        <tr>
+          <td><%= dim_producteur.prod_id %></td>
+          <td><%= dim_producteur.prod_name %></td>
+          <td><%= dim_producteur.prod_uap %></td>
+          <td><%= dim_producteur.prod_site %></td>
+          <td><%= dim_producteur.prod_district %></td>
+          <td><%= dim_producteur.prod_region %></td>
+          <td><%= dim_producteur.prod_dept %></td>
+          <td><%= dim_producteur.prod_ville %></td>
+          <td class="actions">
+            <%= link_to('Show', {:action => 'show', :id => dim_producteur.id}, :class => 'action show') %>
+            <%= link_to("Edit", {:controller => 'stg_producteurs', :action => 'edit', :id => dim_producteur.id}, :class => 'action edit') %>
+            <!--%= link_to('Delete', {:action => 'delete', :id => dim_producteur.id}, :class => 'action delete') %-->
+          </td>
+        </tr>
+    <% end %>
+  </table>
+</div>
