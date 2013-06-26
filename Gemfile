@@ -9,6 +9,7 @@ gem 'mysql2'
 gem 'devise', '2.2.3'
 gem 'formtastic'
 gem 'will_paginate', '~> 3.0'
+gem 'lazy_high_charts'
 
 gem 'rack-cache', :require => 'rack/cache'
 

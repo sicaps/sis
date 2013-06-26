@@ -1,0 +1,29 @@
+<% @page_title= 'Créer Produit' %>
+
+<%= link_to('<< Back to List', {:action => 'list'}, :class => 'back-link') %>
+
+<div class="subject new">
+  <h3>Ajouter un nouveau enregistrement dans la dim_produits à partir de stg_produits</h3>
+
+  <%= form_for(:stg_produit, :url => {:action => 'create'}) do |f| %>
+    <table summary="Stg_produits form fields">
+      <tr>
+        <th>Code</th>
+        <td><%= f.text_field(:product_code) %></td>
+      </tr>
+      <tr>
+        <th>Name</th>
+        <td><%= f.text_field(:product_name) %></td>
+      </tr>
+      <tr>
+        <th>Catégorie</th>
+        <td><%= f.text_field(:product_category) %></td>
+      </tr>
+
+    </table>
+    <div class='form-buttons'>
+      <%= submit_tag('Creer Produit') %>
+    </div>
+
+  <% end %>
+</div>

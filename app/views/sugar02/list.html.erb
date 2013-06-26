@@ -1,0 +1,34 @@
+
+<div class="Produits list">
+  <h3>Les données sur le prix en CI</h3>
+
+  <%= link_to('Ajouter une donnée', {:controller => 'stg_sugar02', :action => 'new'}, :class => 'action new') %>
+
+  <table class="listing" summary="Liste Produit">
+    <tr class="header">
+      <th>Période</th>
+      <th>Localité</th>
+      <th>Produit</th>
+      <th>Prix</th>
+      <th>Actions</th>
+    </tr>
+     <%= @sugar02.each do |prix| %>
+        <tr>
+          <td><%= prix.month_sk %></td>
+          <td><%= prix.loc_sk %></td>
+          <td><%= prix.product_sk %></td>
+          <td><%= prix.price_xof %></td>
+          <td class="actions">
+            <!--%= link_to('Voir', {:action => 'show', :id => prix.month_sk}, :class => 'action show') %>
+            <!--%= link_to("Modifier", {:controller => 'stg_produits', :action => 'edit', :id => dim_produit.product_sk}, :class => 'action edit') %>
+            <!--%= link_to('supprimer', {:action => 'delete', :id => dim_produit.product_sk}, :class => 'action delete') %-->
+          </td>
+        </tr>
+    <% end %>
+
+  </table>
+
+
+  <%= will_paginate %>
+
+</div>

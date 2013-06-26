@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
 <head>
   <title>Observatoire du Sucre</title>
-  <%= stylesheet_link_tag "application", "home", :media => "all" %>
+  <%= stylesheet_link_tag "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
@@ -10,66 +10,65 @@
 <body>
 
     <div id="header">
-        <h1>Observatoire sur la filière Sucre (OFS)</h1>
+      <%= image_tag "ban_caps.gif",size:'1349x74' %>
+      <h1>Observatoire sur la filière Sucre (OFS)</h1>
     </div>
-
 
     <div id="navigation" >
-        <%= image_tag "sucre3.png" %> Partenaires
-    </div>
+      <!--%= image_tag "sucre3.png" %--> Partenaires
 
       <div id="contentMenu">
-        <ul id="menuDeroulant">
-          <% unless admin_signed_in? -%>
-              <% if user_signed_in? -%>
-                  <li>
-                    <%= current_user.email %>
-                  </li>
+       <ul id="menuDeroulant">
+         <% unless admin_signed_in? -%>
+            <% if user_signed_in? -%>
+               <li>
+                 <%= current_user.email %>
+               </li>
 
-                  <li>
-                    <%= link_to 'La Production', '#' %>
-                    <ul class="sousMenu">
+               <li>
+                 <%= link_to 'La Production', '#' %>
+                   <ul class="sousMenu">
                       <li><%= link_to 'La Canne', '#' %></li>
                       <li><%= link_to 'Le Sucre', '#' %></li>
                       <li><%= link_to 'Les Sous-Produits', '#' %></li>
-                    </ul>
-                  </li>
+                   </ul>
+               </li>
 
-                  <li>
-                    <%= link_to 'Le Marché', '#' %>
-                    <ul class="sousMenu">
+               <li>
+                 <%= link_to 'Le Marché', '#' %>
+                   <ul class="sousMenu">
                       <li><%= link_to 'La Compétitivité', '#' %></li>
                       <li><%= link_to 'La Rentabilité', '#' %></li>
                       <li><%= link_to 'Les Flux Import/Export', '#' %></li>
-                    </ul>
-                  </li>
+                   </ul>
+               </li>
 
-                  <li>
-                    <%= link_to 'La Politique', '#' %>
-                    <ul class="sousMenu">
-                      <li><%= link_to 'Le Foncier', {:controller => 'stg_producteurs', :action => 'list'} %></li>
-                      <li><%= link_to 'Les Impacts', {:controller => 'publications', :action => 'list'} %></li>
-                      <li><%= link_to 'Les Investissement', '#' %></li>
-                    </ul>
-                  </li>
+               <li>
+                 <%= link_to 'La Politique', '#' %>
+                   <ul class="sousMenu">
+                     <li><%= link_to 'Le Foncier', {:controller => 'stg_producteurs', :action => 'list'} %></li>
+                     <li><%= link_to 'Les Impacts', {:controller => 'publications', :action => 'list'} %></li>
+                     <li><%= link_to 'Les Investissement', '#' %></li>
+                   </ul>
+               </li>
 
-                  <li>
-                    <%= link_to 'La Bibliothèque', '#' %>
-                    <ul class="sousMenu">
-                      <li><%= link_to 'Les Textes', {:controller => 'publications', :action => 'list'} %></li>
-                      <li><%= link_to 'Les Rapports', '#' %></li>
-                      <li><%= link_to 'Les Bulletins', '#' %></li>
-                    </ul>
-                  </li>
+               <li>
+                 <%= link_to 'La Bibliothèque', '#' %>
+                   <ul class="sousMenu">
+                     <li><%= link_to 'Les Textes', {:controller => 'publications', :action => 'list'} %></li>
+                     <li><%= link_to 'Les Rapports', '#' %></li>
+                     <li><%= link_to 'Les Bulletins', '#' %></li>
+                   </ul>
+               </li>
 
-                  <li>
-                    <%= link_to 'Se déconnecter', destroy_user_session_path %>
-                  </li>
+               <li>
+                  <%= link_to 'Se déconnecter', destroy_user_session_path %>
+               </li>
 
               <% else %>
-                  <li>
-                    <%= link_to 'Se connecter', new_user_session_path %>
-                  </li>
+               <li>
+                 <%= link_to 'Se connecter', new_user_session_path %>
+               </li>
               <% end -%>
 
             <% else %>
@@ -89,13 +88,15 @@
               <li>
                 <%= link_to 'Les Faits', '#' %>
                 <ul class="sousMenu">
-                  <li><%= link_to 'Données du Marché National','#' %></li>
-                  <li><%= link_to 'Données de la Douanes en CI', '#' %></li>
+                  <li><%= link_to 'Données de la Douanes en CI', {:controller => 'sugar01', :action => 'list'} %></li>
+                  <li><%= link_to 'Données du Marché National',{:controller => 'sugar02', :action => 'list'} %></li>
+                  <li><%= link_to 'Données Production Agricole', {:controller => 'sugar03', :action => 'list'} %></li>
+                  <li><%= link_to 'Données Production Industrielle', {:controller => 'sugar05', :action => 'list'} %></li>
+                  <li><%= link_to 'Données Ventes du sucres en CI', {:controller => 'sugar06', :action => 'list'} %></li>
+                  <li><%= link_to 'Données International Volume de Sucre', {:controller => 'sugar07', :action => 'list'} %></li>
 
                 </ul>
               </li>
-
-
 
               <li>
                 <%= link_to 'La Bibliothèque', '#' %>
@@ -112,18 +113,20 @@
 
           <% end %>
 
-
            <li>
              <%= link_to 'Accueil', root_path%>
            </li>
-      </ul>
+       </ul>
+
+
+
+      </div>
+
     </div>
 
     <div id="content">
       <%= yield %>
     </div>
-
-
 
     <div id="footer">
     </div>

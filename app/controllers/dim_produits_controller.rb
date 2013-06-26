@@ -6,7 +6,8 @@ class DimProduitsController < ApplicationController
   end
 
   def list
-    @dim_produits = DimProduit.where(:expiry_date => '9999-12-31').order('product_code ASC')
+    @dim_produits = DimProduit.where(:expiry_date => '9999-12-31').order('product_code ASC').paginate(page: params[:page], :per_page => 15)
+    #@dim_produits = DimProduit
   end
 
   def show

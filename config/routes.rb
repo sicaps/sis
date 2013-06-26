@@ -5,6 +5,8 @@ Sis::Application.routes.draw do
   devise_for :users
 
   root :to => 'home#index'
+  #resources :fact_marche_prix_sucre_civ   # TEST replace 'tweet' with the name of your model
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

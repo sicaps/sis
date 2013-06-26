@@ -41,18 +41,18 @@ a:hover {}
 .center { text-align: center; }
 
 /* Structure */
-#header { height: 5em; padding-top: 1em; text-align: center;
+#header { height: 5em; padding-top: 0em; text-align: center;
     background: #0186ba; color: #FFFFFF; }
 
 #header h1 { margin: 0; padding: 0; }
 
 #main { min-height: 500px; background: #FFFFFF; }
 
-#navigation { float: left; width: 180px; min-height: 490px; padding: 10px;
+#navigation { float: left; width: 150px; min-height: 490px; padding: 10px;
     background: #94B26F; color: #4C2516; }
 
-#contentMenu { width:84%; height: 20px; padding: 2px; float: left}
-#content { width: 70%; min-height:20px; padding: 10px; float: left; }
+#content { width: 69%; min-height:20px; padding: 2px; float: left;}
+#contentMenu { width:100%; height: 20px; padding: 2px; float: left; display: inline;}
 #footer { clear: both; height: 1.5em; text-align: right;
     background: #4C2516; color: #F2DC87; }
 
@@ -164,7 +164,7 @@ a:hover {}
 #menuDeroulant li
 {
     float: left;
-    width: 160px;
+    width: 140px;
     margin: 0;
     padding: 0;
     border: 0;

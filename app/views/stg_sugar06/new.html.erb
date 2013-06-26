@@ -1,0 +1,35 @@
+<h3>Ajouter un nouveau enregistrement dans stg_sugar06</h3>
+
+<%= link_to('<< Back to List', {:controller => 'sugar06', :action => 'list'}, :class => 'back-link') %>
+
+<div class="subject new">
+  <%= form_for(:stg_sugar06, :url => {:action => 'create'}) do |f| %>
+      <table summary="Stg_produits form fields">
+        <tr>
+          <th>Période</th>
+          <td><%= f.text_field(:year_sk) %></td>
+        </tr>
+        <tr>
+          <th>Complexe</th>
+          <td><%= f.text_field(:prod_sk) %></td>
+        </tr>
+        <tr>
+          <th>Produit</th>
+          <td><%= f.text_field(:product_sk) %></td>
+        </tr>
+        <tr>
+          <th>Transaction</th>
+          <td><%= f.text_field(:trans_sk) %></td>
+        </tr>
+        <tr>
+          <th>Volume</th>
+          <td><%= f.text_field(:volume_tonnes) %></td>
+        </tr>
+      </table>
+
+      <div class='form-buttons'>
+        <%= submit_tag('Enregistrer') %>
+      </div>
+
+  <% end %>
+</div>

@@ -1,0 +1,29 @@
+<div class="FactFluxDouaneSucreCiv list">
+  <h3>Les données de la Production Industrielle</h3>
+
+  <%= link_to('Ajouter une donnée', {:controller => 'stg_sugar05', :action => 'new'}, :class => 'action new') %>
+
+  <table class="listing" summary="FactFluxDouaneSucreCiv list">
+    <tr class="header">
+      <th>Période</th>
+      <th>Production</th>
+      <th>Produit</th>
+      <th>Volume (tonnes)</th>
+      <th>Action</th>
+    </tr>
+    <% @sugar05.each do |prod_industrielle| %>
+        <tr>
+          <td><%= prod_industrielle.year_sk %></td>
+          <td><%= prod_industrielle.prod_sk %></td>
+          <td><%= prod_industrielle.product_sk %></td>
+          <td><%= prod_industrielle.volume_tonnes %></td>
+          <td class="actions">
+            <!--%= link_to('Show', {:action => 'show', :id => prod_industrielle.year_sk}, :class => 'action show') %>
+            <!--%= link_to("Edit", {:controller => 'stg_producteurs', :action => 'edit', :id => prod_industrielle.year_sk}, :class => 'action edit') %>
+            <!--%= link_to('Delete', {:action => 'delete', :id => dim_producteur.id}, :class => 'action delete') %-->
+          </td>
+        </tr>
+    <% end %>
+  </table>
+  <%= will_paginate %>
+</div>

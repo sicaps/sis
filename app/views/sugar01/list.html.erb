@@ -1,0 +1,35 @@
+<!--% @page_title= 'Donnees de la douanes' %-->
+
+<div class="FactFluxDouaneSucreCiv list">
+  <h3>Les données de la Douanes</h3>
+
+  <%= link_to('Ajouter une donnée', {:controller => 'stg_sugar01', :action => 'new'}, :class => 'action new') %>
+
+  <table class="listing" summary="FactFluxDouaneSucreCiv list">
+    <tr class="header">
+      <th>Pays</th>
+      <th>Produit</th>
+      <th>Période</th>
+      <th>Transport</th>
+      <th>Volume</th>
+      <th>Prix</th>
+      <th>Action</th>
+    </tr>
+    <% @sugar01.each do |flux_douane| %>
+        <tr>
+          <td><%= flux_douane.ctry_sk %></td>
+          <td><%= flux_douane.product_sk %></td>
+          <td><%= flux_douane.month_sk %></td>
+          <td><%= flux_douane.trans_sk %></td>
+          <td><%= flux_douane.volume_kg %></td>
+          <td><%= flux_douane.price_xof %></td>
+          <td class="actions">
+            <!--%= link_to('Show', {:action => 'show', :id => flux_douane.id}, :class => 'action show') %>
+            <!--%= link_to("Edit", {:controller => 'stg_producteurs', :action => 'edit', :id => flux_douane.month_sk}, :class => 'action edit') %>
+            <!--%= link_to('Delete', {:action => 'delete', :id => dim_producteur.id}, :class => 'action delete') %-->
+          </td>
+        </tr>
+    <% end %>
+  </table>
+  <%= will_paginate %>
+</div>
