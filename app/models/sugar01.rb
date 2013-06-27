@@ -1,4 +1,4 @@
 class Sugar01 < ActiveRecord::Base
-  set_table_name 'fact_flux_douane_sucre_civ'
-  attr_accessible :ctry_sk, :product_sk, :month_sk, :trans_sk, :volume_kg, :price_xof
+  set_table_name 'vu_fact_flux_douane_sucre_civ'
+  attr_accessible :year4, :Pays, :product_name, :trans_name, :volume_kg, :price_xof
 end

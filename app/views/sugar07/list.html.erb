@@ -6,19 +6,18 @@
 
   <table class="listing" summary="FactFluxDouaneSucreCiv list">
     <tr class="header">
-      <th>Période</th>
-      <th>Production</th>
-      <th>Produit</th>
+      <th>Année</th>
+      <th>Pays</th>
+      <th>Transacation</th>
       <th>Volume (tonnes)</th>
-      <th>Action</th>
     </tr>
     <% @sugar07.each do |volume_sucre_inter| %>
         <tr>
-          <td><%= volume_sucre_inter.year_sk %></td>
-          <td><%= volume_sucre_inter.ctry_sk %></td>
-          <td><%= volume_sucre_inter.trans_sk %></td>
+          <td><%= volume_sucre_inter.year4 %></td>
+          <td><%= volume_sucre_inter.Pays %></td>
+          <td><%= volume_sucre_inter.trans_name %></td>
           <td><%= volume_sucre_inter.volume_ktonnes %></td>
-          <td class="actions">
+          <!--td class="actions">
             <!--%= link_to('Show', {:action => 'show', :id => volume_sucre_inter.year_sk}, :class => 'action show') %>
             <!--%= link_to("Edit", {:controller => 'stg_producteurs', :action => 'edit', :id => volume_sucre_inter.year_sk}, :class => 'action edit') %>
             <!--%= link_to('Delete', {:action => 'delete', :id => dim_producteur.id}, :class => 'action delete') %-->

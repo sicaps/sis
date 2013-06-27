@@ -5,27 +5,26 @@
 
   <table class="listing" summary="FactFluxDouaneSucreCiv list">
     <tr class="header">
-      <th>Période</th>
-      <th>Production</th>
+      <th>Année</th>
+      <th>Producteur</th>
       <th>Produit</th>
       <th>Type d'irrigation</th>
       <th>Superficie récoltée (ha)</th>
       <th>Quantité récoltée (tonnes)</th>
-      <th>Action</th>
     </tr>
     <% @sugar03.each do |prod_agricole| %>
         <tr>
-          <td><%= prod_agricole.year_sk %></td>
-          <td><%= prod_agricole.prod_sk %></td>
-          <td><%= prod_agricole.product_sk %></td>
-          <td><%= prod_agricole.irr_sk %></td>
+          <td><%= prod_agricole.year4 %></td>
+          <td><%= prod_agricole.prod_name %></td>
+          <td><%= prod_agricole.product_name %></td>
+          <td><%= prod_agricole.irr_type %></td>
           <td><%= prod_agricole.sup_recoltee_ha %></td>
           <td><%= prod_agricole.qte_recoltee_tonnes %></td>
-          <td class="actions">
+          <!--td class="actions"-->
             <!--%= link_to('Show', {:action => 'show', :id => prod_agricole.year_sk}, :class => 'action show') %>
             <!--%= link_to("Edit", {:controller => 'stg_producteurs', :action => 'edit', :id => prod_agricole.year_sk}, :class => 'action edit') %>
             <!--%= link_to('Delete', {:action => 'delete', :id => dim_producteur.id}, :class => 'action delete') %-->
-          </td>
+          <!--/td-->
         </tr>
     <% end %>
   </table>

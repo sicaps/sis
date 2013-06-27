@@ -7,27 +7,26 @@
 
   <table class="listing" summary="FactFluxDouaneSucreCiv list">
     <tr class="header">
+      <th>Année</th>
       <th>Pays</th>
       <th>Produit</th>
-      <th>Période</th>
-      <th>Transport</th>
+      <th>Transaction</th>
       <th>Volume</th>
       <th>Prix</th>
-      <th>Action</th>
     </tr>
     <% @sugar01.each do |flux_douane| %>
         <tr>
-          <td><%= flux_douane.ctry_sk %></td>
-          <td><%= flux_douane.product_sk %></td>
-          <td><%= flux_douane.month_sk %></td>
-          <td><%= flux_douane.trans_sk %></td>
+          <td><%= flux_douane.year4 %></td>
+          <td><%= flux_douane.Pays %></td>
+          <td><%= flux_douane.product_name %></td>
+          <td><%= flux_douane.trans_name %></td>
           <td><%= flux_douane.volume_kg %></td>
           <td><%= flux_douane.price_xof %></td>
-          <td class="actions">
+          <!--td class="actions"-->
             <!--%= link_to('Show', {:action => 'show', :id => flux_douane.id}, :class => 'action show') %>
             <!--%= link_to("Edit", {:controller => 'stg_producteurs', :action => 'edit', :id => flux_douane.month_sk}, :class => 'action edit') %>
             <!--%= link_to('Delete', {:action => 'delete', :id => dim_producteur.id}, :class => 'action delete') %-->
-          </td>
+          <!--/td-->
         </tr>
     <% end %>
   </table>
