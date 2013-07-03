@@ -3,26 +3,13 @@
 <%= link_to('<< Back to List', {:controller => 'sugar05', :action => 'list'}, :class => 'back-link') %>
 
 <div class="subject new">
-  <%= form_for(:stg_sugar05, :url => {:action => 'create'}) do |f| %>
-      <table summary="Stg_produits form fields">
-        <tr>
-          <th>Période</th>
-          <td><%= f.text_field(:year_sk) %></td>
-        </tr>
-        <tr>
-          <th>Complexe</th>
-          <td><%= f.text_field(:prod_sk) %></td>
-        </tr>
-        <tr>
-          <th>Produit</th>
-          <td><%= f.text_field(:product_sk) %></td>
-        </tr>
-        <tr>
-          <th>Volume</th>
-          <td><%= f.text_field(:volume_tonnes) %></td>
-        </tr>
+  <%= simple_form_for(:stg_sugar05, :url => {:action => 'create'}) do |f| %>
+      <%= f.input :year_sk, label: 'Période'  %>
+      <%= f.input :prod_sk, label: 'Complexe', :as => :select, :collection => DimProducteur.all %>
+      <%= f.input :product_sk, label: 'Produit', :as => :select, :collection => DimProduit.all%>
+      <%= f.input :volume_tonnes, label: 'Prix (CFA)' %>
+      <%= f.button :submit %>
 
-      </table>
       <div class='form-buttons'>
         <%= submit_tag('Enregistrer') %>
       </div>

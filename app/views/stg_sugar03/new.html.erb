@@ -3,34 +3,15 @@
 <%= link_to('<< Back to List', {:controller => 'sugar03', :action => 'list'}, :class => 'back-link') %>
 
 <div class="subject new">
-  <%= form_for(:stg_sugar03, :url => {:action => 'create'}) do |f| %>
-      <table summary="Stg_produits form fields">
-        <tr>
-          <th>Année</th>
-          <td><%= f.text_field(:year_sk) %></td>
-        </tr>
-        <tr>
-          <th>Complexe</th>
-          <td><%= f.text_field(:prod_sk) %></td>
-        </tr>
-        <tr>
-          <th>Produit</th>
-          <td><%= f.text_field(:product_sk) %></td>
-        </tr>
-        <tr>
-          <th>Type d'irrigation</th>
-          <td><%= f.text_field(:irr_sk) %></td>
-        </tr>
-        <tr>
-          <th>Quantité</th>
-          <td><%= f.text_field(:qte_recoltee_tonnes) %></td>
-        </tr>
-        <tr>
-          <th>Superficie(ha)</th>
-          <td><%= f.text_field(:sup_recoltee_ha) %></td>
-        </tr>
+  <%= simple_form_for(:stg_sugar03, :url => {:action => 'create'}) do |f| %>
+      <%= f.input :year_sk, label: 'Année'  %>
+      <%= f.input :prod_sk, label: 'Complexe', :as => :select, :collection => DimProducteur.all %>
+      <%= f.input :product_sk, label: 'Produit', :as => :select, :collection => DimProduit.all%>
+      <%= f.input :irr_sk, label: 'Irrigation', :as => :select, :collection => DimIrrigation.all%>
+      <%= f.input :qte_recoltee_tonnes, label: 'Quantité (Tonnes)', :as => :select, :collection => DimProduit.all%>
+      <%= f.input :sup_recoltee_ha, label: 'Surface recoltée (ha)' %>
+      <%= f.button :submit,label: 'Enregistrer' %>
 
-      </table>
       <div class='form-buttons'>
         <%= submit_tag('Enregistrer') %>
       </div>

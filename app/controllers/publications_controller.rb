@@ -5,9 +5,9 @@ class PublicationsController < ApplicationController
   end
 
   def show
-    namefile = Publication.find(params[:id]).description
-    sourcescript = "app/assets/reports/" + namefile
-    send_file(sourcescript, :type => 'application/pdf', :disposition => 'inline')
+    namefile = Publication.find(params[:id]).fichier_file_name
+    #sourcescript = '/attachments/assets/reports/' + namefile
+    send_file(namefile, :type => 'application/pdf', :disposition => 'inline')
   end
 
   def new
@@ -17,15 +17,14 @@ class PublicationsController < ApplicationController
   def create
     # Instantiate a new object using form parameters
     @publication = Publication.create(params[:publication])
-    #@publication.description = params[:publication][:description]
     # Save the object
-    #if @publication.save
+    if @publication.save
       # If save succeeds redirect to the list action
-    #  redirect_to(:action => 'list')
-    #else
+      redirect_to(:action => 'list')
+    else
       # If save fails, redisplay the form ti fix problem
-    #  render('new')
-    #end
+      render('new')
+    end
   end
 
   def edit

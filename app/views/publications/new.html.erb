@@ -5,7 +5,7 @@
 <div class="Publication new">
   <h2>Create Publication</h2>
 
-  <%= semantic_form_for(:publication, :html => { :multipart => true }, :url => {:action => 'create'}) do |f| %>
+  <%= simple_form_for(:publication, :html => { :multipart => true }, :url => {:action => 'create'}) do |f| %>
     <table summary="Publication form fields">
       <tr>
         <th>Type</th>
