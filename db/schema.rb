@@ -33,20 +33,20 @@ ActiveRecord::Schema.define(:version => 20130605174723) do
 
   create_table "dim_countries", :primary_key => "ctry_sk", :force => true do |t|
     t.integer  "version",                                        :null => false
-    t.string   "ISO",             :limit => 2,                   :null => false
-    t.string   "Pays",            :limit => 64,                  :null => false
-    t.string   "ISO3",            :limit => 3,                   :null => false
-    t.integer  "ISO_Numeric",     :limit => 2
-    t.string   "Country",         :limit => 44,                  :null => false
-    t.string   "Capital",         :limit => 80
-    t.float    "Area_sq_km"
-    t.integer  "Population",      :limit => 8
-    t.string   "Continent",       :limit => 2
+    t.string   "iso",             :limit => 2,                   :null => false
+    t.string   "pays",            :limit => 64,                  :null => false
+    t.string   "iso3",            :limit => 3,                   :null => false
+    t.integer  "iso_numeric",     :limit => 2
+    t.string   "country",         :limit => 44,                  :null => false
+    t.string   "capital",         :limit => 80
+    t.float    "area_sq_km"
+    t.integer  "population",      :limit => 8
+    t.string   "continent",       :limit => 2
     t.string   "tld",             :limit => 3
-    t.string   "CurrencyCode",    :limit => 3
-    t.string   "CurrencyName",    :limit => 13
-    t.string   "Phone",           :limit => 16
-    t.string   "Languages"
+    t.string   "currencycode",    :limit => 3
+    t.string   "currencyname",    :limit => 13
+    t.string   "phone",           :limit => 16
+    t.string   "languages"
     t.integer  "geonameid",       :limit => 8
     t.string   "neighbours",      :limit => 41
     t.string   "uemoa_ind",       :limit => 1,  :default => "0", :null => false

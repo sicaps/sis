@@ -1,9 +1,9 @@
 class DimCountrie < ActiveRecord::Base
-  attr_accessible :ctry_sk, :Pays, :Capital
+  attr_accessible :ctry_sk, :pays, :Country
   set_primary_key(:ctry_sk)
 
   def name
-   ctry_sk
+   pays
   end
 
 end

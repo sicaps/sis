@@ -6,7 +6,7 @@ class Sugar01Controller < ApplicationController
   def show
     #@sugar01 = Sugar01.find(params[:id])
     #grid = PivotTable
-    @chart = LazyHighCharts::HighChart.new('graph') do |f|
+    @chart = LazyHighCharts::HighChart.new do |f|
     f.title({ :text => 'Graphic demo: Production de la Canne '})
     f.options[:xAxis][:categories] = ['2007', '2008', '2009', '2010', '2011']
     #f.labels(:items =>[:html=>"Total fruit consumption", :style=>{:left=>"40px", :top=>"8px", :color=>"black"} ])
@@ -23,19 +23,13 @@ class Sugar01Controller < ApplicationController
     #],
     #    :center=> [100, 80], :size=> 100, :showInLegend=> false)
 
-  end
-
-
-
-  #@grid = PivotTable::Grid.new do |g|
-  #    g.source_data   = Sugar01
-  #    g.column_name  = :product_name
-  #    g.row_name     = :year4
-  #    #g.   = :volume_kg
-  #  end
+    @grid = PivotTable::Grid.new do |g|
+    g.source_data = Sugar01
+    g.column_name = :product_name
+    g.row_name = :year4
+      #g.   = :volume_kg
+    end
 
   end
 
-
-
-end
+end end

@@ -7,10 +7,12 @@ gem 'rails', '3.2.12'
 
 gem 'mysql2'
 gem 'devise', '2.2.3'
+
 gem 'simple_form'
 gem 'will_paginate', '~> 3.0'
+
 gem 'lazy_high_charts'
-gem 'datagrid'
+# gem 'datagrid'
 gem 'pivot_table'
 
 gem 'rack-cache', :require => 'rack/cache'
