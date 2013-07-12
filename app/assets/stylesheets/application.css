@@ -40,7 +40,7 @@ a:hover {}
 .clear { clear: both; }
 .center { text-align: center; }
 
-/* Structure */
+/* Structure application layout*/
 #header { height: 5em; padding-top: 0em; text-align: center;
     background: #0186ba; color: #FFFFFF; }
 
@@ -48,15 +48,82 @@ a:hover {}
 
 #main { min-height: 500px; background: #FFFFFF; }
 
-#navigation { float: left; width: 150px; min-height: 490px; padding: 10px;
-    background: #94B26F; color: #4C2516; }
+#content {
+    width: 100%;
+    height:400px;
+    padding: 0px;
+    margin: 0px;
+}
 
-#content { width: 69%; min-height:20px; padding: 2px; float: left;}
-#contentMenu { width:100%; height: 20px; padding: 2px; float: left; display: inline;}
-#footer { clear: both; height: 1.5em; text-align: right;
-    background: #4C2516; color: #F2DC87; }
+#navigation {
+    float: left;
+    width: 12%;
+    min-height: 475px;
+    padding: 0px;
+    margin: 0px;
+    background: #94B26F;
+    color: #4C2516; }
 
-#footer p { margin: 0; padding: 0.5em 1em; }
+#contentView {
+    float: right;
+    width:88%;
+    height: 475px;
+}
+
+#footer {
+    clear: both;
+    height: 1.5em;
+    text-align: center;
+    background: #4C2516;
+    color: #F2DC87; }
+
+#footer p { margin: 0; padding: 0.5em 1em; text-align: center; }
+
+/* Structure home/index*/
+#cont00 {
+    position:relative;
+    width: 100%;
+    height: 100%;
+    /*background: #DD0000;*/
+    color: #4C2516;
+}
+
+#contL0 {
+    position: relative;
+    float: left;
+    width: 75%;
+    height: 100%;
+    /**background: #AA0000;*/
+    color: #4C2516;
+}
+
+#contR0 {
+    position: relative;
+    float: right;
+    width: 25%;
+    height: 100%;
+    /*background: #F2DC87;*/
+    color: #4C2516;
+}
+
+#contR1 {
+    position: relative;
+    width: 100%;
+    height: 50%;
+    /**background: #04acec;*/
+    border-color: #000000;
+    color: #4C2516;
+}
+
+#contR2 {
+    position:relative;
+    width: 100%;
+    height: 50%;
+/**background:#B6D491;*/
+    border-color: #000000;
+color: #4C2516;
+}
+
 
 /* Navigation */
 #navigation ul { list-style: none; margin: 0; padding: 0 }

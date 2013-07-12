@@ -4,20 +4,29 @@
   <title>Observatoire du Sucre</title>
   <%= stylesheet_link_tag "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
+  <%= javascript_include_tag "jquery-1.4.2.min", "rails", "highcharts" %>
   <%= csrf_meta_tags %>
 </head>
 
 <body>
 
     <div id="header">
-      <%= image_tag "ban_caps5.gif", size:'1349x74' %>
+      <%= image_tag "ban_caps7.gif", size:'1349x74' %>
       <!--h1>Observatoire sur la filière Sucre (OFS)</h1-->
     </div>
 
-    <div id="navigation" >
+    <div>
+      <marquee>
+        Info1: texte pour info 1........................................
+        Info2: texte pour info 2........................................
+        Info3: texte pour info 3........................................
+      </marquee>
+    </div>
+
+    <div id='content' >
       <!--%= image_tag "sucre3.png" %-->
 
-      <div id="contentMenu">
+      <div id="navigation">
        <ul id="menuDeroulant">
          <% unless admin_signed_in? -%>
             <% if user_signed_in? -%>
@@ -28,7 +37,7 @@
                <li>
                  <%= link_to 'La Production', '#' %>
                    <ul class="sousMenu">
-                      <li><%= link_to 'La Canne', '#' %></li>
+                      <li><%= link_to 'La Canne', {:controller => 'sugar01', :action => 'show'} %></li>
                       <li><%= link_to 'Le Sucre', '#' %></li>
                       <li><%= link_to 'Les Sous-Produits', '#' %></li>
                    </ul>
@@ -118,17 +127,18 @@
            </li>
        </ul>
 
+      </div>
 
-
+      <div id="contentView">
+        <%= yield %>
       </div>
 
     </div>
 
-    <div id="content">
-      <%= yield %>
-    </div>
+
 
     <div id="footer">
+       © 2013-2014. Tous droits réservés . Commentaires . Conditions d'utilisation
     </div>
 
 </body>

@@ -1,55 +1,39 @@
 <% @page_title= 'Show Subject' %>
 
-<%= link_to("<< Back to List", {:action => 'list'}, :class => 'back-link') %>
+<!--%= link_to("<< Back to List", {:action => 'list'}, :class => 'back-link') %-->
+<%= link_to("<< Back to List", root_path) %>
 
-<div class="subject show">
-  <h2>Show Subject</h2>
+<div>
+  <!--h2>Show Subject</h2-->
+
+
+
+  <!--script type="text/javascript" charset="utf-8">
+      $(function () {
+          new Highcharts.Chart({
+              chart: { renderTo: 'orders_chart' },
+              title: { text: 'Orders by Day' },
+              xAxis: { type: 'datetime' },
+              yAxis: {
+                  title: { text: 'Dollars'}
+              },
+              series: [{
+                  data: [1, 2, 5, 7, 3]
+              }]
+          });
+      });
+  </script-->
+
+
+
+
+
+
+  <%= high_chart('my_combine_div', @chart) %>
+
 
   <table summary="Subject detail view">
-    <tr>
-      <th>Id</th>
-      <td><%= @dim_producteur.prod_sk %></td>
-    </tr>
-    <tr>
-      <th>Code</th>
-      <td><%= @dim_producteur.prod_id %></td>
-    </tr>
-    <tr>
-      <th>Name</th>
-      <td><%= @dim_producteur.prod_name %></td>
-    </tr>
-    <tr>
-      <th>Uap</th>
-      <td><%= @dim_producteur.prod_uap %></td>
-    </tr>
-    <tr>
-      <th>Site</th>
-      <td><%= @dim_producteur.prod_site %></td>
-    </tr>
-    <tr>
-      <th>District</th>
-      <td><%= @dim_producteur.prod_district %></td>
-    </tr>
-    <tr>
-      <th>Région</th>
-      <td><%= @dim_producteur.prod_region %></td>
-    </tr>
-    <tr>
-      <th>Département</th>
-      <td><%= @dim_producteur.prod_dept %></td>
-    </tr>
-    <tr>
-      <th>Ville</th>
-      <td><%= @dim_producteur.prod_ville %></td>
-    </tr>
-    <tr>
-      <th>Date d'effet</th>
-      <td><%= @dim_producteur.effective_date %></td>
-    </tr>
-    <tr>
-      <th>Date d'expiration</th>
-      <td><%= @dim_producteur.expiry_date %></td>
-    </tr>
+
   </table>
 
 </div>
